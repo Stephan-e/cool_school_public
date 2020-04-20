@@ -1,0 +1,12 @@
+Hi{% if user.first_name %} {{ user.first_name }}{% endif %},
+
+Welcome to the Skyrock App! 
+
+Follow this link to login to your account:
+
+https://app.skyrockprojects.com/
+
+with your email and password 
+
+Thanks,
+skyrock Team
