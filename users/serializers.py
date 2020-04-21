@@ -2596,15 +2596,15 @@ class UpdateStudentBookingSerializer(StudentBookingSerializer):
         #     instance.status = BookingStatus.INACTIVE            
         instance.save()
 
-        if get_client_hours(client) < 8:
-            send_mail(
-            "users Hours Depleted " + str(client.first_name) + " " + str(client.last_name),
-            "The system has detected that the following client's hours have run out: \n" + \
-                str(client.first_name) + " " +str(client.last_name) + " " + str(client.email),
-            "info@usersprojects.com",
-            ["admissions@usersprojects.com","ethan@usersprojects.com","stephan@usersprojects.com"],
+        # if get_client_hours(client) < 8:
+        #     send_mail(
+        #     "users Hours Depleted " + str(client.first_name) + " " + str(client.last_name),
+        #     "The system has detected that the following client's hours have run out: \n" + \
+        #         str(client.first_name) + " " +str(client.last_name) + " " + str(client.email),
+        #     "info@usersprojects.com",
+        #     ["admissions@usersprojects.com","ethan@usersprojects.com","stephan@usersprojects.com"],
 
-            )
+        #     )
 
         return instance
 
