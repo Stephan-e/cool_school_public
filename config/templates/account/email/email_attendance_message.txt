@@ -4,4 +4,4 @@ Hi{% if user.first_name %} {{ user.first_name }}{% endif %},
 
 
 Thanks,
-skyrock Team
+CoolSchool Team

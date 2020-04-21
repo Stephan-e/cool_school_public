@@ -1,7 +1,7 @@
 Hi{% if user.first_name %} {{ user.first_name }}{% endif %},
 
-Welcome to the Skyrock Club App!
+Welcome to the CoolSchool Club App!
 
 Thanks,
 
-Skyrock Team
+CoolSchool Team

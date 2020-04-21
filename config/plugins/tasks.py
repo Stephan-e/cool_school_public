@@ -86,7 +86,7 @@ from celery.task.schedules import crontab
 import datetime
 
 CELERY_BROKER_URL = 'amqp://127.0.0.1'
-CELERY_IMPORTS = ('skyrock.tasks', )
+CELERY_IMPORTS = ('users.tasks', )
 
 CELERY_RESULT_BACKEND = 'amqp://127.0.0.1'
 CELERY_ACCEPT_CONTENT = ['application/json']
@@ -97,19 +97,19 @@ CELERY_TIMEZONE = 'Asia/Taipei'
 
 CELERY_BEAT_SCHEDULE = {
     'send_notification': {
-        'task': 'skyrock.tasks.send_notifiction',
+        'task': 'users.tasks.send_notifiction',
         # 'schedule': 20.0,
         'schedule': crontab(minute=30, hour='10'),
         'args': ()
     },
     'weekly_report': {
-        'task': 'skyrock.tasks.send_weekly_report',
+        'task': 'users.tasks.send_weekly_report',
         #'schedule': 21.0,
         'schedule': crontab(minute=1, hour='2', day_of_week=1),
         'args': ()
     },
     'monthly_report': {
-        'task': 'skyrock.tasks.send_monthly_report',
+        'task': 'users.tasks.send_monthly_report',
         #'schedule': 21.0,
         'schedule': crontab(minute=1, hour='2', day_of_month=1),
         'args': ()

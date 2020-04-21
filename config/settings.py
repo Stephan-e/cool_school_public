@@ -54,7 +54,7 @@ INSTALLED_APPS = [
     'anymail',
     'knox',
     
-    'skyrock',
+    'users',
 
     'debug_toolbar',
     'taggit',
@@ -155,7 +155,7 @@ TEMPLATES = [
     },
 ]
 
-AUTH_USER_MODEL = 'skyrock.User'
+AUTH_USER_MODEL = 'users.User'
 
 
 # Other

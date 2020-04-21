@@ -8,4 +8,4 @@ The student is {{student.first_name}} {{student.last_name}} and wants to do {{cl
 Please contact {{staff.email}} if you have any questions.
 
 Thanks,
-Skyrock Team
+CoolSchool Team

@@ -1,6 +1,5 @@
-# skyrock
-Skyrock app service
-
+# Cool School
+The app to make your school cool
 ## Prerequisites
 Make sure you have the following installed
 - Docker

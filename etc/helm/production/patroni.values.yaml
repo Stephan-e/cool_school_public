@@ -46,7 +46,7 @@ walE:
 cloneWithWale:
   enable: false
   cloneWaleEnvDir: /home/postgres/wal.e/env
-  cloneWalGcsBucket: skyrock-production-wale
+  cloneWalGcsBucket: coolschool-production-wale
   cloneScope: dummy
 
 persistentVolume:

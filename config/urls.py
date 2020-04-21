@@ -13,7 +13,7 @@ admin.autodiscover()
 
 urlpatterns = (
     # Views
-    url(r'^api/', include('skyrock.urls', namespace='skyrock')),
+    url(r'^api/', include('users.urls', namespace='users')),
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('allauth.urls')),
    

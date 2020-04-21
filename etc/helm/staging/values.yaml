@@ -5,7 +5,7 @@ deployment:
   replicaCount: 1
   command: "['gunicorn', 'config.wsgi:application', '--config', 'file:config/gunicorn.py']"
 image:
-  repository: gcr.io/skyrock/skyrock_cluster
+  repository: gcr.io/coolschool/coolschool_cluster
   tag: latest
   pullPolicy: IfNotPresent
 service: 
@@ -37,15 +37,15 @@ ingress:
   tls:
     - hosts:
       - localhost
-      secretName: skyrock-service-tls
+      secretName: coolschool-service-tls
   hosts:
     - localhost
 postgres:
   enabled: true
   user: admin
-  host: patroni-skyrock-patroni.skyrock-staging
+  host: patroni-coolschool-patroni.coolschool-staging
   port: "5432"
   secret:
-    name: patroni-skyrock-patroni
+    name: patroni-coolschool-patroni
     key: password-admin
 workersEnabled: false

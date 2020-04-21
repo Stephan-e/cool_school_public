@@ -5,7 +5,7 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 
-ACCOUNT_ADAPTER = 'skyrock.adapters.AccountAdapter'
+ACCOUNT_ADAPTER = 'users.adapters.AccountAdapter'
 ACCOUNT_EMAIL_SUBJECT_PREFIX = ''
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 ACCOUNT_EMAIL_REQUIRED = True
