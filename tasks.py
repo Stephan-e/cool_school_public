@@ -126,7 +126,7 @@ def create_volume(ctx, name, zone='europe-west1-c', size='100', type='pd-standar
 @task
 def create_volume_claim(ctx, name, disk):
     ctx.run(
-        'helm install --name {name} skyrock/gce-persistent-volume --set volumeName={name},gcePersistentDiskName={disk},claimName={name}')
+        'helm install --name {name} cool_school/gce-persistent-volume --set volumeName={name},gcePersistentDiskName={disk},claimName={name}')
 
 
 @task
@@ -174,7 +174,7 @@ def install(ctx, config):
     config_dict = settings_dict['configs'][config]
     set_context(ctx, config)
 
-    ctx.run('helm repo add skyrock https://skyrock.github.io/charts', echo=True)
+    ctx.run('helm repo add cool_school https://cool_school.github.io/charts', echo=True)
     ctx.run('helm install --name {project_name} '
             '-f {helm_values_path} '
             '{helm_chart} '

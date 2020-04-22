@@ -31,139 +31,139 @@
                 AND pg_catalog.pg_table_is_visible(c.oid); args=None
 (0.003) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
 (0.004) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'l3z662nw8z0oxwuc9se6ey53x3lqozu2' AND "django_session"."expire_date" > '2020-04-20T06:20:37.975802+00:00'::timestamptz); args=('l3z662nw8z0oxwuc9se6ey53x3lqozu2', datetime.datetime(2020, 4, 20, 6, 20, 37, 975802, tzinfo=<UTC>))
-(0.008) SELECT "skyrock_user"."id", "skyrock_user"."password", "skyrock_user"."last_login", "skyrock_user"."is_superuser", "skyrock_user"."updated", "skyrock_user"."created", "skyrock_user"."first_name", "skyrock_user"."last_name", "skyrock_user"."email", "skyrock_user"."is_staff", "skyrock_user"."is_active", "skyrock_user"."date_joined", "skyrock_user"."role", "skyrock_user"."client_id", "skyrock_user"."teacher_id", "skyrock_user"."staff_id" FROM "skyrock_user" WHERE "skyrock_user"."id" = 1; args=(1,)
-(0.003) SELECT "skyrock_user"."id", "skyrock_user"."password", "skyrock_user"."last_login", "skyrock_user"."is_superuser", "skyrock_user"."updated", "skyrock_user"."created", "skyrock_user"."first_name", "skyrock_user"."last_name", "skyrock_user"."email", "skyrock_user"."is_staff", "skyrock_user"."is_active", "skyrock_user"."date_joined", "skyrock_user"."role", "skyrock_user"."client_id", "skyrock_user"."teacher_id", "skyrock_user"."staff_id" FROM "skyrock_user" WHERE "skyrock_user"."email" = 'stephan@skyrockprojects.com'; args=('stephan@skyrockprojects.com',)
+(0.008) SELECT "cool_school_user"."id", "cool_school_user"."password", "cool_school_user"."last_login", "cool_school_user"."is_superuser", "cool_school_user"."updated", "cool_school_user"."created", "cool_school_user"."first_name", "cool_school_user"."last_name", "cool_school_user"."email", "cool_school_user"."is_staff", "cool_school_user"."is_active", "cool_school_user"."date_joined", "cool_school_user"."role", "cool_school_user"."client_id", "cool_school_user"."teacher_id", "cool_school_user"."staff_id" FROM "cool_school_user" WHERE "cool_school_user"."id" = 1; args=(1,)
+(0.003) SELECT "cool_school_user"."id", "cool_school_user"."password", "cool_school_user"."last_login", "cool_school_user"."is_superuser", "cool_school_user"."updated", "cool_school_user"."created", "cool_school_user"."first_name", "cool_school_user"."last_name", "cool_school_user"."email", "cool_school_user"."is_staff", "cool_school_user"."is_active", "cool_school_user"."date_joined", "cool_school_user"."role", "cool_school_user"."client_id", "cool_school_user"."teacher_id", "cool_school_user"."staff_id" FROM "cool_school_user" WHERE "cool_school_user"."email" = 'stephan@cool_schoolprojects.com'; args=('stephan@cool_schoolprojects.com',)
 (0.010) DELETE FROM "knox_authtoken" WHERE (NOT ("knox_authtoken"."expires" IS NULL) AND "knox_authtoken"."user_id" = 1 AND "knox_authtoken"."expires" < '2020-04-20T06:20:38.428772+00:00'::timestamptz); args=(1, datetime.datetime(2020, 4, 20, 6, 20, 38, 428772, tzinfo=<UTC>))
 (0.007) INSERT INTO "knox_authtoken" ("digest", "token_key", "salt", "user_id", "created", "expires") VALUES ('7f405b3e1f5376ac916cfb4f1b6bbcb82f4642acf23778d08aa450709af278424b77a03b2f3b311ea7046d8a43cdf034689b84e0c6ecf7116c0509908d366fe1', '439ae95a', '90e437cb4dccb517', 1, '2020-04-20T06:20:38.456336+00:00'::timestamptz, '2020-04-20T16:20:38.455530+00:00'::timestamptz); args=('7f405b3e1f5376ac916cfb4f1b6bbcb82f4642acf23778d08aa450709af278424b77a03b2f3b311ea7046d8a43cdf034689b84e0c6ecf7116c0509908d366fe1', '439ae95a', '90e437cb4dccb517', 1, datetime.datetime(2020, 4, 20, 6, 20, 38, 456336, tzinfo=<UTC>), datetime.datetime(2020, 4, 20, 16, 20, 38, 455530, tzinfo=<UTC>))
-(0.006) UPDATE "skyrock_user" SET "last_login" = '2020-04-20T06:20:38.479192+00:00'::timestamptz WHERE "skyrock_user"."id" = 1; args=(datetime.datetime(2020, 4, 20, 6, 20, 38, 479192, tzinfo=<UTC>), 1)
+(0.006) UPDATE "cool_school_user" SET "last_login" = '2020-04-20T06:20:38.479192+00:00'::timestamptz WHERE "cool_school_user"."id" = 1; args=(datetime.datetime(2020, 4, 20, 6, 20, 38, 479192, tzinfo=<UTC>), 1)
 user logged in
-(0.002) SELECT "skyrock_client"."id", "skyrock_client"."updated", "skyrock_client"."created", "skyrock_client"."identifier", "skyrock_client"."first_name", "skyrock_client"."last_name", "skyrock_client"."location", "skyrock_client"."language", "skyrock_client"."email", "skyrock_client"."phone", "skyrock_client"."payment_status", "skyrock_client"."status", "skyrock_client"."description" FROM "skyrock_client" WHERE "skyrock_client"."id" = 1; args=(1,)
-(0.003) SELECT SUM("skyrock_payment"."hours_purchased") AS "hours_purchased__sum" FROM "skyrock_payment" WHERE "skyrock_payment"."client_id" = 1; args=(1,)
-(0.004) SELECT SUM("skyrock_campsession"."duration") AS "session__duration__sum" FROM "skyrock_campbooking" LEFT OUTER JOIN "skyrock_campsession" ON ("skyrock_campbooking"."session_id" = "skyrock_campsession"."id") WHERE ("skyrock_campbooking"."client_id" = 1 AND "skyrock_campbooking"."attendance_status" = 'attended'); args=(1, 'attended')
-(0.003) SELECT SUM("skyrock_campsession"."duration") AS "session__duration__sum" FROM "skyrock_campbooking" LEFT OUTER JOIN "skyrock_campsession" ON ("skyrock_campbooking"."session_id" = "skyrock_campsession"."id") WHERE ("skyrock_campbooking"."client_id" = 1 AND "skyrock_campbooking"."attendance_status" = 'absent'); args=(1, 'absent')
-(0.003) SELECT SUM("skyrock_session"."duration") AS "session__duration__sum" FROM "skyrock_booking" LEFT OUTER JOIN "skyrock_session" ON ("skyrock_booking"."session_id" = "skyrock_session"."id") WHERE ("skyrock_booking"."client_id" = 1 AND "skyrock_booking"."attendance_status" = 'attended'); args=(1, 'attended')
-(0.004) SELECT SUM("skyrock_session"."duration") AS "session__duration__sum" FROM "skyrock_booking" LEFT OUTER JOIN "skyrock_session" ON ("skyrock_booking"."session_id" = "skyrock_session"."id") WHERE ("skyrock_booking"."client_id" = 1 AND "skyrock_booking"."attendance_status" = 'absent'); args=(1, 'absent')
-(0.010) SELECT SUM("skyrock_payment"."hours_purchased") AS "hours_purchased__sum" FROM "skyrock_payment" WHERE "skyrock_payment"."client_id" = 1; args=(1,)
-(0.015) SELECT SUM("skyrock_campsession"."duration") AS "session__duration__sum" FROM "skyrock_campbooking" LEFT OUTER JOIN "skyrock_campsession" ON ("skyrock_campbooking"."session_id" = "skyrock_campsession"."id") WHERE ("skyrock_campbooking"."client_id" = 1 AND "skyrock_campbooking"."attendance_status" = 'absent'); args=(1, 'absent')
-(0.004) SELECT SUM("skyrock_session"."duration") AS "session__duration__sum" FROM "skyrock_booking" LEFT OUTER JOIN "skyrock_session" ON ("skyrock_booking"."session_id" = "skyrock_session"."id") WHERE ("skyrock_booking"."client_id" = 1 AND "skyrock_booking"."attendance_status" = 'absent'); args=(1, 'absent')
-(0.004) SELECT "skyrock_student"."id", "skyrock_student"."updated", "skyrock_student"."created", "skyrock_student"."identifier", "skyrock_student"."first_name", "skyrock_student"."last_name", "skyrock_student"."birth_date", "skyrock_student"."medical_condition", "skyrock_student"."client_id", "skyrock_student"."language", "skyrock_student"."student_id", "skyrock_student"."status", "skyrock_student"."location" FROM "skyrock_student" WHERE "skyrock_student"."client_id" = 1; args=(1,)
-(0.003) SELECT "skyrock_studentclub"."id", "skyrock_studentclub"."updated", "skyrock_studentclub"."created", "skyrock_studentclub"."identifier", "skyrock_studentclub"."club_id", "skyrock_studentclub"."student_id" FROM "skyrock_studentclub" WHERE "skyrock_studentclub"."student_id" = 47; args=(47,)
-(0.003) SELECT SUM("skyrock_campsession"."duration") AS "session__duration__sum" FROM "skyrock_campbooking" LEFT OUTER JOIN "skyrock_campsession" ON ("skyrock_campbooking"."session_id" = "skyrock_campsession"."id") WHERE ("skyrock_campbooking"."student_id" = 47 AND "skyrock_campbooking"."attendance_status" = 'attended'); args=(47, 'attended')
-(0.004) SELECT SUM("skyrock_session"."duration") AS "session__duration__sum" FROM "skyrock_booking" LEFT OUTER JOIN "skyrock_session" ON ("skyrock_booking"."session_id" = "skyrock_session"."id") WHERE ("skyrock_booking"."student_id" = 47 AND "skyrock_booking"."attendance_status" = 'attended'); args=(47, 'attended')
-(0.003) SELECT "skyrock_studentclub"."id", "skyrock_studentclub"."updated", "skyrock_studentclub"."created", "skyrock_studentclub"."identifier", "skyrock_studentclub"."club_id", "skyrock_studentclub"."student_id" FROM "skyrock_studentclub" WHERE "skyrock_studentclub"."student_id" = 46; args=(46,)
-(0.002) SELECT SUM("skyrock_campsession"."duration") AS "session__duration__sum" FROM "skyrock_campbooking" LEFT OUTER JOIN "skyrock_campsession" ON ("skyrock_campbooking"."session_id" = "skyrock_campsession"."id") WHERE ("skyrock_campbooking"."student_id" = 46 AND "skyrock_campbooking"."attendance_status" = 'attended'); args=(46, 'attended')
-(0.003) SELECT SUM("skyrock_session"."duration") AS "session__duration__sum" FROM "skyrock_booking" LEFT OUTER JOIN "skyrock_session" ON ("skyrock_booking"."session_id" = "skyrock_session"."id") WHERE ("skyrock_booking"."student_id" = 46 AND "skyrock_booking"."attendance_status" = 'attended'); args=(46, 'attended')
-(0.002) SELECT "skyrock_studentclub"."id", "skyrock_studentclub"."updated", "skyrock_studentclub"."created", "skyrock_studentclub"."identifier", "skyrock_studentclub"."club_id", "skyrock_studentclub"."student_id" FROM "skyrock_studentclub" WHERE "skyrock_studentclub"."student_id" = 1; args=(1,)
-(0.004) SELECT SUM("skyrock_campsession"."duration") AS "session__duration__sum" FROM "skyrock_campbooking" LEFT OUTER JOIN "skyrock_campsession" ON ("skyrock_campbooking"."session_id" = "skyrock_campsession"."id") WHERE ("skyrock_campbooking"."student_id" = 1 AND "skyrock_campbooking"."attendance_status" = 'attended'); args=(1, 'attended')
-(0.003) SELECT SUM("skyrock_session"."duration") AS "session__duration__sum" FROM "skyrock_booking" LEFT OUTER JOIN "skyrock_session" ON ("skyrock_booking"."session_id" = "skyrock_session"."id") WHERE ("skyrock_booking"."student_id" = 1 AND "skyrock_booking"."attendance_status" = 'attended'); args=(1, 'attended')
-(0.002) SELECT "skyrock_studentclub"."id", "skyrock_studentclub"."updated", "skyrock_studentclub"."created", "skyrock_studentclub"."identifier", "skyrock_studentclub"."club_id", "skyrock_studentclub"."student_id" FROM "skyrock_studentclub" WHERE "skyrock_studentclub"."student_id" = 45; args=(45,)
-(0.002) SELECT SUM("skyrock_campsession"."duration") AS "session__duration__sum" FROM "skyrock_campbooking" LEFT OUTER JOIN "skyrock_campsession" ON ("skyrock_campbooking"."session_id" = "skyrock_campsession"."id") WHERE ("skyrock_campbooking"."student_id" = 45 AND "skyrock_campbooking"."attendance_status" = 'attended'); args=(45, 'attended')
-(0.003) SELECT SUM("skyrock_session"."duration") AS "session__duration__sum" FROM "skyrock_booking" LEFT OUTER JOIN "skyrock_session" ON ("skyrock_booking"."session_id" = "skyrock_session"."id") WHERE ("skyrock_booking"."student_id" = 45 AND "skyrock_booking"."attendance_status" = 'attended'); args=(45, 'attended')
-(0.023) SELECT "skyrock_payment"."id", "skyrock_payment"."updated", "skyrock_payment"."created", "skyrock_payment"."identifier", "skyrock_payment"."hours_purchased", "skyrock_payment"."date_purchased", "skyrock_payment"."method", "skyrock_payment"."amount", "skyrock_payment"."client_id" FROM "skyrock_payment" WHERE ("skyrock_payment"."client_id" = 1 AND "skyrock_payment"."amount" >= 0 AND "skyrock_payment"."hours_purchased" >= 0) ORDER BY "skyrock_payment"."date_purchased" DESC LIMIT 1; args=(1, 0, Decimal('0'))
-(0.008) SELECT "skyrock_teacher"."id", "skyrock_teacher"."updated", "skyrock_teacher"."created", "skyrock_teacher"."identifier", "skyrock_teacher"."first_name", "skyrock_teacher"."last_name", "skyrock_teacher"."birth_date", "skyrock_teacher"."language", "skyrock_teacher"."email", "skyrock_teacher"."phone", "skyrock_teacher"."location" FROM "skyrock_teacher" WHERE "skyrock_teacher"."id" = 5; args=(5,)
-(0.006) SELECT "auth_group"."id", "auth_group"."name" FROM "auth_group" INNER JOIN "skyrock_user_groups" ON ("auth_group"."id" = "skyrock_user_groups"."group_id") WHERE "skyrock_user_groups"."user_id" = 1; args=(1,)
+(0.002) SELECT "cool_school_client"."id", "cool_school_client"."updated", "cool_school_client"."created", "cool_school_client"."identifier", "cool_school_client"."first_name", "cool_school_client"."last_name", "cool_school_client"."location", "cool_school_client"."language", "cool_school_client"."email", "cool_school_client"."phone", "cool_school_client"."payment_status", "cool_school_client"."status", "cool_school_client"."description" FROM "cool_school_client" WHERE "cool_school_client"."id" = 1; args=(1,)
+(0.003) SELECT SUM("cool_school_payment"."hours_purchased") AS "hours_purchased__sum" FROM "cool_school_payment" WHERE "cool_school_payment"."client_id" = 1; args=(1,)
+(0.004) SELECT SUM("cool_school_campsession"."duration") AS "session__duration__sum" FROM "cool_school_campbooking" LEFT OUTER JOIN "cool_school_campsession" ON ("cool_school_campbooking"."session_id" = "cool_school_campsession"."id") WHERE ("cool_school_campbooking"."client_id" = 1 AND "cool_school_campbooking"."attendance_status" = 'attended'); args=(1, 'attended')
+(0.003) SELECT SUM("cool_school_campsession"."duration") AS "session__duration__sum" FROM "cool_school_campbooking" LEFT OUTER JOIN "cool_school_campsession" ON ("cool_school_campbooking"."session_id" = "cool_school_campsession"."id") WHERE ("cool_school_campbooking"."client_id" = 1 AND "cool_school_campbooking"."attendance_status" = 'absent'); args=(1, 'absent')
+(0.003) SELECT SUM("cool_school_session"."duration") AS "session__duration__sum" FROM "cool_school_booking" LEFT OUTER JOIN "cool_school_session" ON ("cool_school_booking"."session_id" = "cool_school_session"."id") WHERE ("cool_school_booking"."client_id" = 1 AND "cool_school_booking"."attendance_status" = 'attended'); args=(1, 'attended')
+(0.004) SELECT SUM("cool_school_session"."duration") AS "session__duration__sum" FROM "cool_school_booking" LEFT OUTER JOIN "cool_school_session" ON ("cool_school_booking"."session_id" = "cool_school_session"."id") WHERE ("cool_school_booking"."client_id" = 1 AND "cool_school_booking"."attendance_status" = 'absent'); args=(1, 'absent')
+(0.010) SELECT SUM("cool_school_payment"."hours_purchased") AS "hours_purchased__sum" FROM "cool_school_payment" WHERE "cool_school_payment"."client_id" = 1; args=(1,)
+(0.015) SELECT SUM("cool_school_campsession"."duration") AS "session__duration__sum" FROM "cool_school_campbooking" LEFT OUTER JOIN "cool_school_campsession" ON ("cool_school_campbooking"."session_id" = "cool_school_campsession"."id") WHERE ("cool_school_campbooking"."client_id" = 1 AND "cool_school_campbooking"."attendance_status" = 'absent'); args=(1, 'absent')
+(0.004) SELECT SUM("cool_school_session"."duration") AS "session__duration__sum" FROM "cool_school_booking" LEFT OUTER JOIN "cool_school_session" ON ("cool_school_booking"."session_id" = "cool_school_session"."id") WHERE ("cool_school_booking"."client_id" = 1 AND "cool_school_booking"."attendance_status" = 'absent'); args=(1, 'absent')
+(0.004) SELECT "cool_school_student"."id", "cool_school_student"."updated", "cool_school_student"."created", "cool_school_student"."identifier", "cool_school_student"."first_name", "cool_school_student"."last_name", "cool_school_student"."birth_date", "cool_school_student"."medical_condition", "cool_school_student"."client_id", "cool_school_student"."language", "cool_school_student"."student_id", "cool_school_student"."status", "cool_school_student"."location" FROM "cool_school_student" WHERE "cool_school_student"."client_id" = 1; args=(1,)
+(0.003) SELECT "cool_school_studentclub"."id", "cool_school_studentclub"."updated", "cool_school_studentclub"."created", "cool_school_studentclub"."identifier", "cool_school_studentclub"."club_id", "cool_school_studentclub"."student_id" FROM "cool_school_studentclub" WHERE "cool_school_studentclub"."student_id" = 47; args=(47,)
+(0.003) SELECT SUM("cool_school_campsession"."duration") AS "session__duration__sum" FROM "cool_school_campbooking" LEFT OUTER JOIN "cool_school_campsession" ON ("cool_school_campbooking"."session_id" = "cool_school_campsession"."id") WHERE ("cool_school_campbooking"."student_id" = 47 AND "cool_school_campbooking"."attendance_status" = 'attended'); args=(47, 'attended')
+(0.004) SELECT SUM("cool_school_session"."duration") AS "session__duration__sum" FROM "cool_school_booking" LEFT OUTER JOIN "cool_school_session" ON ("cool_school_booking"."session_id" = "cool_school_session"."id") WHERE ("cool_school_booking"."student_id" = 47 AND "cool_school_booking"."attendance_status" = 'attended'); args=(47, 'attended')
+(0.003) SELECT "cool_school_studentclub"."id", "cool_school_studentclub"."updated", "cool_school_studentclub"."created", "cool_school_studentclub"."identifier", "cool_school_studentclub"."club_id", "cool_school_studentclub"."student_id" FROM "cool_school_studentclub" WHERE "cool_school_studentclub"."student_id" = 46; args=(46,)
+(0.002) SELECT SUM("cool_school_campsession"."duration") AS "session__duration__sum" FROM "cool_school_campbooking" LEFT OUTER JOIN "cool_school_campsession" ON ("cool_school_campbooking"."session_id" = "cool_school_campsession"."id") WHERE ("cool_school_campbooking"."student_id" = 46 AND "cool_school_campbooking"."attendance_status" = 'attended'); args=(46, 'attended')
+(0.003) SELECT SUM("cool_school_session"."duration") AS "session__duration__sum" FROM "cool_school_booking" LEFT OUTER JOIN "cool_school_session" ON ("cool_school_booking"."session_id" = "cool_school_session"."id") WHERE ("cool_school_booking"."student_id" = 46 AND "cool_school_booking"."attendance_status" = 'attended'); args=(46, 'attended')
+(0.002) SELECT "cool_school_studentclub"."id", "cool_school_studentclub"."updated", "cool_school_studentclub"."created", "cool_school_studentclub"."identifier", "cool_school_studentclub"."club_id", "cool_school_studentclub"."student_id" FROM "cool_school_studentclub" WHERE "cool_school_studentclub"."student_id" = 1; args=(1,)
+(0.004) SELECT SUM("cool_school_campsession"."duration") AS "session__duration__sum" FROM "cool_school_campbooking" LEFT OUTER JOIN "cool_school_campsession" ON ("cool_school_campbooking"."session_id" = "cool_school_campsession"."id") WHERE ("cool_school_campbooking"."student_id" = 1 AND "cool_school_campbooking"."attendance_status" = 'attended'); args=(1, 'attended')
+(0.003) SELECT SUM("cool_school_session"."duration") AS "session__duration__sum" FROM "cool_school_booking" LEFT OUTER JOIN "cool_school_session" ON ("cool_school_booking"."session_id" = "cool_school_session"."id") WHERE ("cool_school_booking"."student_id" = 1 AND "cool_school_booking"."attendance_status" = 'attended'); args=(1, 'attended')
+(0.002) SELECT "cool_school_studentclub"."id", "cool_school_studentclub"."updated", "cool_school_studentclub"."created", "cool_school_studentclub"."identifier", "cool_school_studentclub"."club_id", "cool_school_studentclub"."student_id" FROM "cool_school_studentclub" WHERE "cool_school_studentclub"."student_id" = 45; args=(45,)
+(0.002) SELECT SUM("cool_school_campsession"."duration") AS "session__duration__sum" FROM "cool_school_campbooking" LEFT OUTER JOIN "cool_school_campsession" ON ("cool_school_campbooking"."session_id" = "cool_school_campsession"."id") WHERE ("cool_school_campbooking"."student_id" = 45 AND "cool_school_campbooking"."attendance_status" = 'attended'); args=(45, 'attended')
+(0.003) SELECT SUM("cool_school_session"."duration") AS "session__duration__sum" FROM "cool_school_booking" LEFT OUTER JOIN "cool_school_session" ON ("cool_school_booking"."session_id" = "cool_school_session"."id") WHERE ("cool_school_booking"."student_id" = 45 AND "cool_school_booking"."attendance_status" = 'attended'); args=(45, 'attended')
+(0.023) SELECT "cool_school_payment"."id", "cool_school_payment"."updated", "cool_school_payment"."created", "cool_school_payment"."identifier", "cool_school_payment"."hours_purchased", "cool_school_payment"."date_purchased", "cool_school_payment"."method", "cool_school_payment"."amount", "cool_school_payment"."client_id" FROM "cool_school_payment" WHERE ("cool_school_payment"."client_id" = 1 AND "cool_school_payment"."amount" >= 0 AND "cool_school_payment"."hours_purchased" >= 0) ORDER BY "cool_school_payment"."date_purchased" DESC LIMIT 1; args=(1, 0, Decimal('0'))
+(0.008) SELECT "cool_school_teacher"."id", "cool_school_teacher"."updated", "cool_school_teacher"."created", "cool_school_teacher"."identifier", "cool_school_teacher"."first_name", "cool_school_teacher"."last_name", "cool_school_teacher"."birth_date", "cool_school_teacher"."language", "cool_school_teacher"."email", "cool_school_teacher"."phone", "cool_school_teacher"."location" FROM "cool_school_teacher" WHERE "cool_school_teacher"."id" = 5; args=(5,)
+(0.006) SELECT "auth_group"."id", "auth_group"."name" FROM "auth_group" INNER JOIN "cool_school_user_groups" ON ("auth_group"."id" = "cool_school_user_groups"."group_id") WHERE "cool_school_user_groups"."user_id" = 1; args=(1,)
 Exception while resolving variable 'hide_label' in template 'rest_framework/horizontal/input.html'.
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 882, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 882, in _resolve_lookup
     current = current[bit]
 KeyError: 'hide_label'
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 890, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 890, in _resolve_lookup
     current = getattr(current, bit)
 AttributeError: 'dict' object has no attribute 'hide_label'
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 896, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 896, in _resolve_lookup
     current = current[int(bit)]
 ValueError: invalid literal for int() with base 10: 'hide_label'
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 903, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 903, in _resolve_lookup
     (bit, current))  # missing attribute
 django.template.base.VariableDoesNotExist: Failed lookup for key [hide_label] in "{'base_template': 'input.html', 'input_type': 'text', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x108b3b668>}"
 Exception while resolving variable 'placeholder' in template 'rest_framework/horizontal/input.html'.
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 882, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 882, in _resolve_lookup
     current = current[bit]
 KeyError: 'placeholder'
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 890, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 890, in _resolve_lookup
     current = getattr(current, bit)
 AttributeError: 'dict' object has no attribute 'placeholder'
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 896, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 896, in _resolve_lookup
     current = current[int(bit)]
 ValueError: invalid literal for int() with base 10: 'placeholder'
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 903, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 903, in _resolve_lookup
     (bit, current))  # missing attribute
 django.template.base.VariableDoesNotExist: Failed lookup for key [placeholder] in "{'base_template': 'input.html', 'input_type': 'text', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x108b3b668>}"
 Exception while resolving variable 'hide_label' in template 'rest_framework/horizontal/input.html'.
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 882, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 882, in _resolve_lookup
     current = current[bit]
 KeyError: 'hide_label'
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 890, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 890, in _resolve_lookup
     current = getattr(current, bit)
 AttributeError: 'dict' object has no attribute 'hide_label'
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 896, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 896, in _resolve_lookup
     current = current[int(bit)]
 ValueError: invalid literal for int() with base 10: 'hide_label'
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 903, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 903, in _resolve_lookup
     (bit, current))  # missing attribute
 django.template.base.VariableDoesNotExist: Failed lookup for key [hide_label] in "{'base_template': 'input.html', 'input_type': 'password', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x108b3b668>}"
 Exception while resolving variable 'placeholder' in template 'rest_framework/horizontal/input.html'.
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 882, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 882, in _resolve_lookup
     current = current[bit]
 KeyError: 'placeholder'
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 890, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 890, in _resolve_lookup
     current = getattr(current, bit)
 AttributeError: 'dict' object has no attribute 'placeholder'
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 896, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 896, in _resolve_lookup
     current = current[int(bit)]
 ValueError: invalid literal for int() with base 10: 'placeholder'
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 903, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 903, in _resolve_lookup
     (bit, current))  # missing attribute
 django.template.base.VariableDoesNotExist: Failed lookup for key [placeholder] in "{'base_template': 'input.html', 'input_type': 'password', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x108b3b668>}"
 (0.008) UPDATE "django_session" SET "session_data" = 'NWYxZWExZjQwNWRhOTA3M2M1NGUwZmZjZDMwNjRkN2ZmZTc4ZTlmMDp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJlYTE5NmRiZTFmZGIzZTNjMGRlYWQxYzE1OTc5NjlkMWJhNTExZTE4In0=', "expire_date" = '2020-05-04T06:20:39.262027+00:00'::timestamptz WHERE "django_session"."session_key" = 'l3z662nw8z0oxwuc9se6ey53x3lqozu2'; args=('NWYxZWExZjQwNWRhOTA3M2M1NGUwZmZjZDMwNjRkN2ZmZTc4ZTlmMDp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJlYTE5NmRiZTFmZGIzZTNjMGRlYWQxYzE1OTc5NjlkMWJhNTExZTE4In0=', datetime.datetime(2020, 5, 4, 6, 20, 39, 262027, tzinfo=<UTC>), 'l3z662nw8z0oxwuc9se6ey53x3lqozu2')
@@ -177,144 +177,144 @@ django.template.base.VariableDoesNotExist: Failed lookup for key [placeholder] i
                 AND pg_catalog.pg_table_is_visible(c.oid); args=None
 (0.003) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
 (0.004) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'l3z662nw8z0oxwuc9se6ey53x3lqozu2' AND "django_session"."expire_date" > '2020-04-20T06:20:53.478780+00:00'::timestamptz); args=('l3z662nw8z0oxwuc9se6ey53x3lqozu2', datetime.datetime(2020, 4, 20, 6, 20, 53, 478780, tzinfo=<UTC>))
-(0.005) SELECT "skyrock_user"."id", "skyrock_user"."password", "skyrock_user"."last_login", "skyrock_user"."is_superuser", "skyrock_user"."updated", "skyrock_user"."created", "skyrock_user"."first_name", "skyrock_user"."last_name", "skyrock_user"."email", "skyrock_user"."is_staff", "skyrock_user"."is_active", "skyrock_user"."date_joined", "skyrock_user"."role", "skyrock_user"."client_id", "skyrock_user"."teacher_id", "skyrock_user"."staff_id" FROM "skyrock_user" WHERE "skyrock_user"."id" = 1; args=(1,)
-(0.003) SELECT "skyrock_user"."id", "skyrock_user"."password", "skyrock_user"."last_login", "skyrock_user"."is_superuser", "skyrock_user"."updated", "skyrock_user"."created", "skyrock_user"."first_name", "skyrock_user"."last_name", "skyrock_user"."email", "skyrock_user"."is_staff", "skyrock_user"."is_active", "skyrock_user"."date_joined", "skyrock_user"."role", "skyrock_user"."client_id", "skyrock_user"."teacher_id", "skyrock_user"."staff_id" FROM "skyrock_user" WHERE "skyrock_user"."email" = 'stephan@skyrockprojects.com'; args=('stephan@skyrockprojects.com',)
+(0.005) SELECT "cool_school_user"."id", "cool_school_user"."password", "cool_school_user"."last_login", "cool_school_user"."is_superuser", "cool_school_user"."updated", "cool_school_user"."created", "cool_school_user"."first_name", "cool_school_user"."last_name", "cool_school_user"."email", "cool_school_user"."is_staff", "cool_school_user"."is_active", "cool_school_user"."date_joined", "cool_school_user"."role", "cool_school_user"."client_id", "cool_school_user"."teacher_id", "cool_school_user"."staff_id" FROM "cool_school_user" WHERE "cool_school_user"."id" = 1; args=(1,)
+(0.003) SELECT "cool_school_user"."id", "cool_school_user"."password", "cool_school_user"."last_login", "cool_school_user"."is_superuser", "cool_school_user"."updated", "cool_school_user"."created", "cool_school_user"."first_name", "cool_school_user"."last_name", "cool_school_user"."email", "cool_school_user"."is_staff", "cool_school_user"."is_active", "cool_school_user"."date_joined", "cool_school_user"."role", "cool_school_user"."client_id", "cool_school_user"."teacher_id", "cool_school_user"."staff_id" FROM "cool_school_user" WHERE "cool_school_user"."email" = 'stephan@cool_schoolprojects.com'; args=('stephan@cool_schoolprojects.com',)
 (0.005) DELETE FROM "knox_authtoken" WHERE (NOT ("knox_authtoken"."expires" IS NULL) AND "knox_authtoken"."user_id" = 1 AND "knox_authtoken"."expires" < '2020-04-20T06:20:54.091541+00:00'::timestamptz); args=(1, datetime.datetime(2020, 4, 20, 6, 20, 54, 91541, tzinfo=<UTC>))
 (0.008) INSERT INTO "knox_authtoken" ("digest", "token_key", "salt", "user_id", "created", "expires") VALUES ('9fdba9861cb5f0c350d9f40f8ff38970489f9dbec2b64338c6e3b22c74c1d3563b8b9bf83eb49403b92aec172ad90ae777e4446f0f1c1a5e4c9d21cbbeb538a3', '23cf8495', 'ce8d9e4a20e6f187', 1, '2020-04-20T06:20:54.116263+00:00'::timestamptz, '2020-04-20T16:20:54.115601+00:00'::timestamptz); args=('9fdba9861cb5f0c350d9f40f8ff38970489f9dbec2b64338c6e3b22c74c1d3563b8b9bf83eb49403b92aec172ad90ae777e4446f0f1c1a5e4c9d21cbbeb538a3', '23cf8495', 'ce8d9e4a20e6f187', 1, datetime.datetime(2020, 4, 20, 6, 20, 54, 116263, tzinfo=<UTC>), datetime.datetime(2020, 4, 20, 16, 20, 54, 115601, tzinfo=<UTC>))
-(0.006) UPDATE "skyrock_user" SET "last_login" = '2020-04-20T06:20:54.150628+00:00'::timestamptz WHERE "skyrock_user"."id" = 1; args=(datetime.datetime(2020, 4, 20, 6, 20, 54, 150628, tzinfo=<UTC>), 1)
+(0.006) UPDATE "cool_school_user" SET "last_login" = '2020-04-20T06:20:54.150628+00:00'::timestamptz WHERE "cool_school_user"."id" = 1; args=(datetime.datetime(2020, 4, 20, 6, 20, 54, 150628, tzinfo=<UTC>), 1)
 user logged in
-(0.007) SELECT "skyrock_client"."id", "skyrock_client"."updated", "skyrock_client"."created", "skyrock_client"."identifier", "skyrock_client"."first_name", "skyrock_client"."last_name", "skyrock_client"."location", "skyrock_client"."language", "skyrock_client"."email", "skyrock_client"."phone", "skyrock_client"."payment_status", "skyrock_client"."status", "skyrock_client"."description" FROM "skyrock_client" WHERE "skyrock_client"."id" = 1; args=(1,)
-(0.004) SELECT SUM("skyrock_payment"."hours_purchased") AS "hours_purchased__sum" FROM "skyrock_payment" WHERE "skyrock_payment"."client_id" = 1; args=(1,)
-(0.004) SELECT SUM("skyrock_campsession"."duration") AS "session__duration__sum" FROM "skyrock_campbooking" LEFT OUTER JOIN "skyrock_campsession" ON ("skyrock_campbooking"."session_id" = "skyrock_campsession"."id") WHERE ("skyrock_campbooking"."client_id" = 1 AND "skyrock_campbooking"."attendance_status" = 'attended'); args=(1, 'attended')
-(0.005) SELECT SUM("skyrock_campsession"."duration") AS "session__duration__sum" FROM "skyrock_campbooking" LEFT OUTER JOIN "skyrock_campsession" ON ("skyrock_campbooking"."session_id" = "skyrock_campsession"."id") WHERE ("skyrock_campbooking"."client_id" = 1 AND "skyrock_campbooking"."attendance_status" = 'absent'); args=(1, 'absent')
-(0.003) SELECT SUM("skyrock_session"."duration") AS "session__duration__sum" FROM "skyrock_booking" LEFT OUTER JOIN "skyrock_session" ON ("skyrock_booking"."session_id" = "skyrock_session"."id") WHERE ("skyrock_booking"."client_id" = 1 AND "skyrock_booking"."attendance_status" = 'attended'); args=(1, 'attended')
-(0.009) SELECT SUM("skyrock_session"."duration") AS "session__duration__sum" FROM "skyrock_booking" LEFT OUTER JOIN "skyrock_session" ON ("skyrock_booking"."session_id" = "skyrock_session"."id") WHERE ("skyrock_booking"."client_id" = 1 AND "skyrock_booking"."attendance_status" = 'absent'); args=(1, 'absent')
-(0.003) SELECT SUM("skyrock_payment"."hours_purchased") AS "hours_purchased__sum" FROM "skyrock_payment" WHERE "skyrock_payment"."client_id" = 1; args=(1,)
-(0.004) SELECT SUM("skyrock_campsession"."duration") AS "session__duration__sum" FROM "skyrock_campbooking" LEFT OUTER JOIN "skyrock_campsession" ON ("skyrock_campbooking"."session_id" = "skyrock_campsession"."id") WHERE ("skyrock_campbooking"."client_id" = 1 AND "skyrock_campbooking"."attendance_status" = 'absent'); args=(1, 'absent')
-(0.003) SELECT SUM("skyrock_session"."duration") AS "session__duration__sum" FROM "skyrock_booking" LEFT OUTER JOIN "skyrock_session" ON ("skyrock_booking"."session_id" = "skyrock_session"."id") WHERE ("skyrock_booking"."client_id" = 1 AND "skyrock_booking"."attendance_status" = 'absent'); args=(1, 'absent')
-(0.004) SELECT "skyrock_student"."id", "skyrock_student"."updated", "skyrock_student"."created", "skyrock_student"."identifier", "skyrock_student"."first_name", "skyrock_student"."last_name", "skyrock_student"."birth_date", "skyrock_student"."medical_condition", "skyrock_student"."client_id", "skyrock_student"."language", "skyrock_student"."student_id", "skyrock_student"."status", "skyrock_student"."location" FROM "skyrock_student" WHERE "skyrock_student"."client_id" = 1; args=(1,)
-(0.004) SELECT "skyrock_studentclub"."id", "skyrock_studentclub"."updated", "skyrock_studentclub"."created", "skyrock_studentclub"."identifier", "skyrock_studentclub"."club_id", "skyrock_studentclub"."student_id" FROM "skyrock_studentclub" WHERE "skyrock_studentclub"."student_id" = 47; args=(47,)
-(0.004) SELECT SUM("skyrock_campsession"."duration") AS "session__duration__sum" FROM "skyrock_campbooking" LEFT OUTER JOIN "skyrock_campsession" ON ("skyrock_campbooking"."session_id" = "skyrock_campsession"."id") WHERE ("skyrock_campbooking"."student_id" = 47 AND "skyrock_campbooking"."attendance_status" = 'attended'); args=(47, 'attended')
-(0.003) SELECT SUM("skyrock_session"."duration") AS "session__duration__sum" FROM "skyrock_booking" LEFT OUTER JOIN "skyrock_session" ON ("skyrock_booking"."session_id" = "skyrock_session"."id") WHERE ("skyrock_booking"."student_id" = 47 AND "skyrock_booking"."attendance_status" = 'attended'); args=(47, 'attended')
-(0.024) SELECT "skyrock_studentclub"."id", "skyrock_studentclub"."updated", "skyrock_studentclub"."created", "skyrock_studentclub"."identifier", "skyrock_studentclub"."club_id", "skyrock_studentclub"."student_id" FROM "skyrock_studentclub" WHERE "skyrock_studentclub"."student_id" = 46; args=(46,)
-(0.013) SELECT SUM("skyrock_campsession"."duration") AS "session__duration__sum" FROM "skyrock_campbooking" LEFT OUTER JOIN "skyrock_campsession" ON ("skyrock_campbooking"."session_id" = "skyrock_campsession"."id") WHERE ("skyrock_campbooking"."student_id" = 46 AND "skyrock_campbooking"."attendance_status" = 'attended'); args=(46, 'attended')
-(0.006) SELECT SUM("skyrock_session"."duration") AS "session__duration__sum" FROM "skyrock_booking" LEFT OUTER JOIN "skyrock_session" ON ("skyrock_booking"."session_id" = "skyrock_session"."id") WHERE ("skyrock_booking"."student_id" = 46 AND "skyrock_booking"."attendance_status" = 'attended'); args=(46, 'attended')
-(0.011) SELECT "skyrock_studentclub"."id", "skyrock_studentclub"."updated", "skyrock_studentclub"."created", "skyrock_studentclub"."identifier", "skyrock_studentclub"."club_id", "skyrock_studentclub"."student_id" FROM "skyrock_studentclub" WHERE "skyrock_studentclub"."student_id" = 1; args=(1,)
-(0.003) SELECT SUM("skyrock_campsession"."duration") AS "session__duration__sum" FROM "skyrock_campbooking" LEFT OUTER JOIN "skyrock_campsession" ON ("skyrock_campbooking"."session_id" = "skyrock_campsession"."id") WHERE ("skyrock_campbooking"."student_id" = 1 AND "skyrock_campbooking"."attendance_status" = 'attended'); args=(1, 'attended')
-(0.003) SELECT SUM("skyrock_session"."duration") AS "session__duration__sum" FROM "skyrock_booking" LEFT OUTER JOIN "skyrock_session" ON ("skyrock_booking"."session_id" = "skyrock_session"."id") WHERE ("skyrock_booking"."student_id" = 1 AND "skyrock_booking"."attendance_status" = 'attended'); args=(1, 'attended')
-(0.002) SELECT "skyrock_studentclub"."id", "skyrock_studentclub"."updated", "skyrock_studentclub"."created", "skyrock_studentclub"."identifier", "skyrock_studentclub"."club_id", "skyrock_studentclub"."student_id" FROM "skyrock_studentclub" WHERE "skyrock_studentclub"."student_id" = 45; args=(45,)
-(0.003) SELECT SUM("skyrock_campsession"."duration") AS "session__duration__sum" FROM "skyrock_campbooking" LEFT OUTER JOIN "skyrock_campsession" ON ("skyrock_campbooking"."session_id" = "skyrock_campsession"."id") WHERE ("skyrock_campbooking"."student_id" = 45 AND "skyrock_campbooking"."attendance_status" = 'attended'); args=(45, 'attended')
-(0.003) SELECT SUM("skyrock_session"."duration") AS "session__duration__sum" FROM "skyrock_booking" LEFT OUTER JOIN "skyrock_session" ON ("skyrock_booking"."session_id" = "skyrock_session"."id") WHERE ("skyrock_booking"."student_id" = 45 AND "skyrock_booking"."attendance_status" = 'attended'); args=(45, 'attended')
-(0.004) SELECT "skyrock_payment"."id", "skyrock_payment"."updated", "skyrock_payment"."created", "skyrock_payment"."identifier", "skyrock_payment"."hours_purchased", "skyrock_payment"."date_purchased", "skyrock_payment"."method", "skyrock_payment"."amount", "skyrock_payment"."client_id" FROM "skyrock_payment" WHERE ("skyrock_payment"."client_id" = 1 AND "skyrock_payment"."amount" >= 0 AND "skyrock_payment"."hours_purchased" >= 0) ORDER BY "skyrock_payment"."date_purchased" DESC LIMIT 1; args=(1, 0, Decimal('0'))
-(0.025) SELECT "skyrock_teacher"."id", "skyrock_teacher"."updated", "skyrock_teacher"."created", "skyrock_teacher"."identifier", "skyrock_teacher"."first_name", "skyrock_teacher"."last_name", "skyrock_teacher"."birth_date", "skyrock_teacher"."language", "skyrock_teacher"."email", "skyrock_teacher"."phone", "skyrock_teacher"."location" FROM "skyrock_teacher" WHERE "skyrock_teacher"."id" = 5; args=(5,)
-(0.003) SELECT "auth_group"."id", "auth_group"."name" FROM "auth_group" INNER JOIN "skyrock_user_groups" ON ("auth_group"."id" = "skyrock_user_groups"."group_id") WHERE "skyrock_user_groups"."user_id" = 1; args=(1,)
+(0.007) SELECT "cool_school_client"."id", "cool_school_client"."updated", "cool_school_client"."created", "cool_school_client"."identifier", "cool_school_client"."first_name", "cool_school_client"."last_name", "cool_school_client"."location", "cool_school_client"."language", "cool_school_client"."email", "cool_school_client"."phone", "cool_school_client"."payment_status", "cool_school_client"."status", "cool_school_client"."description" FROM "cool_school_client" WHERE "cool_school_client"."id" = 1; args=(1,)
+(0.004) SELECT SUM("cool_school_payment"."hours_purchased") AS "hours_purchased__sum" FROM "cool_school_payment" WHERE "cool_school_payment"."client_id" = 1; args=(1,)
+(0.004) SELECT SUM("cool_school_campsession"."duration") AS "session__duration__sum" FROM "cool_school_campbooking" LEFT OUTER JOIN "cool_school_campsession" ON ("cool_school_campbooking"."session_id" = "cool_school_campsession"."id") WHERE ("cool_school_campbooking"."client_id" = 1 AND "cool_school_campbooking"."attendance_status" = 'attended'); args=(1, 'attended')
+(0.005) SELECT SUM("cool_school_campsession"."duration") AS "session__duration__sum" FROM "cool_school_campbooking" LEFT OUTER JOIN "cool_school_campsession" ON ("cool_school_campbooking"."session_id" = "cool_school_campsession"."id") WHERE ("cool_school_campbooking"."client_id" = 1 AND "cool_school_campbooking"."attendance_status" = 'absent'); args=(1, 'absent')
+(0.003) SELECT SUM("cool_school_session"."duration") AS "session__duration__sum" FROM "cool_school_booking" LEFT OUTER JOIN "cool_school_session" ON ("cool_school_booking"."session_id" = "cool_school_session"."id") WHERE ("cool_school_booking"."client_id" = 1 AND "cool_school_booking"."attendance_status" = 'attended'); args=(1, 'attended')
+(0.009) SELECT SUM("cool_school_session"."duration") AS "session__duration__sum" FROM "cool_school_booking" LEFT OUTER JOIN "cool_school_session" ON ("cool_school_booking"."session_id" = "cool_school_session"."id") WHERE ("cool_school_booking"."client_id" = 1 AND "cool_school_booking"."attendance_status" = 'absent'); args=(1, 'absent')
+(0.003) SELECT SUM("cool_school_payment"."hours_purchased") AS "hours_purchased__sum" FROM "cool_school_payment" WHERE "cool_school_payment"."client_id" = 1; args=(1,)
+(0.004) SELECT SUM("cool_school_campsession"."duration") AS "session__duration__sum" FROM "cool_school_campbooking" LEFT OUTER JOIN "cool_school_campsession" ON ("cool_school_campbooking"."session_id" = "cool_school_campsession"."id") WHERE ("cool_school_campbooking"."client_id" = 1 AND "cool_school_campbooking"."attendance_status" = 'absent'); args=(1, 'absent')
+(0.003) SELECT SUM("cool_school_session"."duration") AS "session__duration__sum" FROM "cool_school_booking" LEFT OUTER JOIN "cool_school_session" ON ("cool_school_booking"."session_id" = "cool_school_session"."id") WHERE ("cool_school_booking"."client_id" = 1 AND "cool_school_booking"."attendance_status" = 'absent'); args=(1, 'absent')
+(0.004) SELECT "cool_school_student"."id", "cool_school_student"."updated", "cool_school_student"."created", "cool_school_student"."identifier", "cool_school_student"."first_name", "cool_school_student"."last_name", "cool_school_student"."birth_date", "cool_school_student"."medical_condition", "cool_school_student"."client_id", "cool_school_student"."language", "cool_school_student"."student_id", "cool_school_student"."status", "cool_school_student"."location" FROM "cool_school_student" WHERE "cool_school_student"."client_id" = 1; args=(1,)
+(0.004) SELECT "cool_school_studentclub"."id", "cool_school_studentclub"."updated", "cool_school_studentclub"."created", "cool_school_studentclub"."identifier", "cool_school_studentclub"."club_id", "cool_school_studentclub"."student_id" FROM "cool_school_studentclub" WHERE "cool_school_studentclub"."student_id" = 47; args=(47,)
+(0.004) SELECT SUM("cool_school_campsession"."duration") AS "session__duration__sum" FROM "cool_school_campbooking" LEFT OUTER JOIN "cool_school_campsession" ON ("cool_school_campbooking"."session_id" = "cool_school_campsession"."id") WHERE ("cool_school_campbooking"."student_id" = 47 AND "cool_school_campbooking"."attendance_status" = 'attended'); args=(47, 'attended')
+(0.003) SELECT SUM("cool_school_session"."duration") AS "session__duration__sum" FROM "cool_school_booking" LEFT OUTER JOIN "cool_school_session" ON ("cool_school_booking"."session_id" = "cool_school_session"."id") WHERE ("cool_school_booking"."student_id" = 47 AND "cool_school_booking"."attendance_status" = 'attended'); args=(47, 'attended')
+(0.024) SELECT "cool_school_studentclub"."id", "cool_school_studentclub"."updated", "cool_school_studentclub"."created", "cool_school_studentclub"."identifier", "cool_school_studentclub"."club_id", "cool_school_studentclub"."student_id" FROM "cool_school_studentclub" WHERE "cool_school_studentclub"."student_id" = 46; args=(46,)
+(0.013) SELECT SUM("cool_school_campsession"."duration") AS "session__duration__sum" FROM "cool_school_campbooking" LEFT OUTER JOIN "cool_school_campsession" ON ("cool_school_campbooking"."session_id" = "cool_school_campsession"."id") WHERE ("cool_school_campbooking"."student_id" = 46 AND "cool_school_campbooking"."attendance_status" = 'attended'); args=(46, 'attended')
+(0.006) SELECT SUM("cool_school_session"."duration") AS "session__duration__sum" FROM "cool_school_booking" LEFT OUTER JOIN "cool_school_session" ON ("cool_school_booking"."session_id" = "cool_school_session"."id") WHERE ("cool_school_booking"."student_id" = 46 AND "cool_school_booking"."attendance_status" = 'attended'); args=(46, 'attended')
+(0.011) SELECT "cool_school_studentclub"."id", "cool_school_studentclub"."updated", "cool_school_studentclub"."created", "cool_school_studentclub"."identifier", "cool_school_studentclub"."club_id", "cool_school_studentclub"."student_id" FROM "cool_school_studentclub" WHERE "cool_school_studentclub"."student_id" = 1; args=(1,)
+(0.003) SELECT SUM("cool_school_campsession"."duration") AS "session__duration__sum" FROM "cool_school_campbooking" LEFT OUTER JOIN "cool_school_campsession" ON ("cool_school_campbooking"."session_id" = "cool_school_campsession"."id") WHERE ("cool_school_campbooking"."student_id" = 1 AND "cool_school_campbooking"."attendance_status" = 'attended'); args=(1, 'attended')
+(0.003) SELECT SUM("cool_school_session"."duration") AS "session__duration__sum" FROM "cool_school_booking" LEFT OUTER JOIN "cool_school_session" ON ("cool_school_booking"."session_id" = "cool_school_session"."id") WHERE ("cool_school_booking"."student_id" = 1 AND "cool_school_booking"."attendance_status" = 'attended'); args=(1, 'attended')
+(0.002) SELECT "cool_school_studentclub"."id", "cool_school_studentclub"."updated", "cool_school_studentclub"."created", "cool_school_studentclub"."identifier", "cool_school_studentclub"."club_id", "cool_school_studentclub"."student_id" FROM "cool_school_studentclub" WHERE "cool_school_studentclub"."student_id" = 45; args=(45,)
+(0.003) SELECT SUM("cool_school_campsession"."duration") AS "session__duration__sum" FROM "cool_school_campbooking" LEFT OUTER JOIN "cool_school_campsession" ON ("cool_school_campbooking"."session_id" = "cool_school_campsession"."id") WHERE ("cool_school_campbooking"."student_id" = 45 AND "cool_school_campbooking"."attendance_status" = 'attended'); args=(45, 'attended')
+(0.003) SELECT SUM("cool_school_session"."duration") AS "session__duration__sum" FROM "cool_school_booking" LEFT OUTER JOIN "cool_school_session" ON ("cool_school_booking"."session_id" = "cool_school_session"."id") WHERE ("cool_school_booking"."student_id" = 45 AND "cool_school_booking"."attendance_status" = 'attended'); args=(45, 'attended')
+(0.004) SELECT "cool_school_payment"."id", "cool_school_payment"."updated", "cool_school_payment"."created", "cool_school_payment"."identifier", "cool_school_payment"."hours_purchased", "cool_school_payment"."date_purchased", "cool_school_payment"."method", "cool_school_payment"."amount", "cool_school_payment"."client_id" FROM "cool_school_payment" WHERE ("cool_school_payment"."client_id" = 1 AND "cool_school_payment"."amount" >= 0 AND "cool_school_payment"."hours_purchased" >= 0) ORDER BY "cool_school_payment"."date_purchased" DESC LIMIT 1; args=(1, 0, Decimal('0'))
+(0.025) SELECT "cool_school_teacher"."id", "cool_school_teacher"."updated", "cool_school_teacher"."created", "cool_school_teacher"."identifier", "cool_school_teacher"."first_name", "cool_school_teacher"."last_name", "cool_school_teacher"."birth_date", "cool_school_teacher"."language", "cool_school_teacher"."email", "cool_school_teacher"."phone", "cool_school_teacher"."location" FROM "cool_school_teacher" WHERE "cool_school_teacher"."id" = 5; args=(5,)
+(0.003) SELECT "auth_group"."id", "auth_group"."name" FROM "auth_group" INNER JOIN "cool_school_user_groups" ON ("auth_group"."id" = "cool_school_user_groups"."group_id") WHERE "cool_school_user_groups"."user_id" = 1; args=(1,)
 Exception while resolving variable 'hide_label' in template 'rest_framework/horizontal/input.html'.
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 882, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 882, in _resolve_lookup
     current = current[bit]
 KeyError: 'hide_label'
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 890, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 890, in _resolve_lookup
     current = getattr(current, bit)
 AttributeError: 'dict' object has no attribute 'hide_label'
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 896, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 896, in _resolve_lookup
     current = current[int(bit)]
 ValueError: invalid literal for int() with base 10: 'hide_label'
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 903, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 903, in _resolve_lookup
     (bit, current))  # missing attribute
 django.template.base.VariableDoesNotExist: Failed lookup for key [hide_label] in "{'base_template': 'input.html', 'input_type': 'text', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x1086355f8>}"
 Exception while resolving variable 'placeholder' in template 'rest_framework/horizontal/input.html'.
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 882, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 882, in _resolve_lookup
     current = current[bit]
 KeyError: 'placeholder'
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 890, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 890, in _resolve_lookup
     current = getattr(current, bit)
 AttributeError: 'dict' object has no attribute 'placeholder'
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 896, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 896, in _resolve_lookup
     current = current[int(bit)]
 ValueError: invalid literal for int() with base 10: 'placeholder'
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 903, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 903, in _resolve_lookup
     (bit, current))  # missing attribute
 django.template.base.VariableDoesNotExist: Failed lookup for key [placeholder] in "{'base_template': 'input.html', 'input_type': 'text', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x1086355f8>}"
 Exception while resolving variable 'hide_label' in template 'rest_framework/horizontal/input.html'.
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 882, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 882, in _resolve_lookup
     current = current[bit]
 KeyError: 'hide_label'
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 890, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 890, in _resolve_lookup
     current = getattr(current, bit)
 AttributeError: 'dict' object has no attribute 'hide_label'
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 896, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 896, in _resolve_lookup
     current = current[int(bit)]
 ValueError: invalid literal for int() with base 10: 'hide_label'
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 903, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 903, in _resolve_lookup
     (bit, current))  # missing attribute
 django.template.base.VariableDoesNotExist: Failed lookup for key [hide_label] in "{'base_template': 'input.html', 'input_type': 'password', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x1086355f8>}"
 Exception while resolving variable 'placeholder' in template 'rest_framework/horizontal/input.html'.
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 882, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 882, in _resolve_lookup
     current = current[bit]
 KeyError: 'placeholder'
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 890, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 890, in _resolve_lookup
     current = getattr(current, bit)
 AttributeError: 'dict' object has no attribute 'placeholder'
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 896, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 896, in _resolve_lookup
     current = current[int(bit)]
 ValueError: invalid literal for int() with base 10: 'placeholder'
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/Users/stephan/miniconda3/envs/skyrock1/lib/python3.6/site-packages/django/template/base.py", line 903, in _resolve_lookup
+  File "/Users/stephan/miniconda3/envs/cool_school1/lib/python3.6/site-packages/django/template/base.py", line 903, in _resolve_lookup
     (bit, current))  # missing attribute
 django.template.base.VariableDoesNotExist: Failed lookup for key [placeholder] in "{'base_template': 'input.html', 'input_type': 'password', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x1086355f8>}"
 (0.004) UPDATE "django_session" SET "session_data" = 'NWYxZWExZjQwNWRhOTA3M2M1NGUwZmZjZDMwNjRkN2ZmZTc4ZTlmMDp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJlYTE5NmRiZTFmZGIzZTNjMGRlYWQxYzE1OTc5NjlkMWJhNTExZTE4In0=', "expire_date" = '2020-05-04T06:20:55.402300+00:00'::timestamptz WHERE "django_session"."session_key" = 'l3z662nw8z0oxwuc9se6ey53x3lqozu2'; args=('NWYxZWExZjQwNWRhOTA3M2M1NGUwZmZjZDMwNjRkN2ZmZTc4ZTlmMDp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJlYTE5NmRiZTFmZGIzZTNjMGRlYWQxYzE1OTc5NjlkMWJhNTExZTE4In0=', datetime.datetime(2020, 5, 4, 6, 20, 55, 402300, tzinfo=<UTC>), 'l3z662nw8z0oxwuc9se6ey53x3lqozu2')
 "POST /api/admin/auth/login/ HTTP/1.1" 200 22954
 user logged in
 "POST /api/admin/auth/login/ HTTP/1.1" 200 22953
-user stephan@skyrockprojects.comlogged in
+user stephan@cool_schoolprojects.comlogged in
 "POST /api/admin/auth/login/ HTTP/1.1" 200 22953

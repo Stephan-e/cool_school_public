@@ -72,12 +72,12 @@ heroku login
 ```
 - Run the following command locally to initialize your project
 ```
-heroku create skyrock_cluster --remote prod --region eu && \
-heroku addons:create heroku-postgresql:hobby-dev --app skyrock_cluster && \
+heroku create cool_school_cluster --remote prod --region eu && \
+heroku addons:create heroku-postgresql:hobby-dev --app cool_school_cluster && \
 heroku config:set \
     DJANGO_SECRET=`openssl rand -base64 32` \
     DJANGO_SETTINGS_MODULE="config.settings" \
-    --app skyrock_cluster
+    --app cool_school_cluster
 ```
 - Encrypt your Heroky credentials and allow Travis to view them for deployments
 ```

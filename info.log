@@ -1,10 +1,10 @@
-user stephan@skyrockprojects.com logged in
+user stephan@cool_schoolprojects.com logged in
 "POST /api/admin/auth/login/ HTTP/1.1" 200 22952
-user stephan@skyrockprojects.com logged in
+user stephan@cool_schoolprojects.com logged in
 "POST /api/admin/auth/login/ HTTP/1.1" 200 22950
 "GET /api/ HTTP/1.1" 200 18617
 "GET /api/admin/auth/login/ HTTP/1.1" 405 17375
-user stephan@skyrockprojects.com logged in
+user stephan@cool_schoolprojects.com logged in
 "POST /api/admin/auth/login/ HTTP/1.1" 200 22951
-user stephan@skyrockprojects.com logged in
+user stephan@cool_schoolprojects.com logged in
 "POST /api/admin/auth/login/ HTTP/1.1" 200 22952
