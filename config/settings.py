@@ -168,15 +168,6 @@ FIXTURE_DIRS = ['config/fixtures']
 
 CACHE_DIR = os.path.join(PROJECT_DIR, 'var/cache')
 
-# sentry_sdk.init(
-#     dsn="https://154be60e928e4cebb4cd67b1f20e001a@sentry.io/2786920",
-#     integrations=[DjangoIntegration()],
-
-#     # If you wish to associate users to errors (assuming you are using
-#     # django.contrib.auth) you may enable sending PII data.
-#     send_default_pii=True
-# )
-
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
